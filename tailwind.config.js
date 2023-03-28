@@ -2,9 +2,9 @@ module.exports = {
 
   // Specify the paths to all of the template files in your project
   content: [
-    './src/components/**/*.res',
-    './src/layouts/**/*.res',
-    './src/*.res',
+    './src/components/**/*.{mjs,js,jsx,ts,tsx,html,res,resi}',
+    './src/layouts/**/*.{mjs,js,jsx,ts,tsx,html,res,resi}',
+    './src/**/*.{mjs,js,jsx,ts,tsx,html,res,resi}',
   ],
   safelist: ["html", "body"],
 

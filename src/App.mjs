@@ -3,19 +3,26 @@
 import * as React from "react";
 import * as MainLayout from "./layouts/MainLayout.mjs";
 import * as Router from "next/router";
+import * as JsxRuntime from "react/jsx-runtime";
 
 function $$default(props) {
   var router = Router.useRouter();
   var content = React.createElement(props.Component, props.pageProps);
-  var match = router.route;
+  var match = router.pathname;
   if (match === "/examples") {
-    return React.createElement(MainLayout.make, {
-                children: null
-              }, React.createElement("h1", {
-                    className: "font-bold"
-                  }, "Examples Section"), React.createElement("div", undefined, content));
+    return JsxRuntime.jsxs(MainLayout.make, {
+                children: [
+                  JsxRuntime.jsx("h1", {
+                        children: "Examples Section",
+                        className: "font-bold"
+                      }),
+                  JsxRuntime.jsx("div", {
+                        children: content
+                      })
+                ]
+              });
   } else {
-    return React.createElement(MainLayout.make, {
+    return JsxRuntime.jsx(MainLayout.make, {
                 children: content
               });
   }
@@ -24,6 +31,5 @@ function $$default(props) {
 export {
   $$default ,
   $$default as default,
-  
 }
 /* react Not a pure module */

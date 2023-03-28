@@ -1,9 +1,12 @@
 {
   "name": "rescript-nextjs-template",
   "namespace": false,
-  "reason": { "react-jsx": 3 },
+  "jsx": { "version": 4, "mode": "automatic" },
   "refmt": 3,
-  "bs-dependencies": ["@rescript/react"],
+  "bs-dependencies": [
+    "@rescript/react",
+    "rescript-next"
+  ],
   "ppx-flags": [],
   "sources": [
     { "dir": "src", "subdirs": true }

@@ -14,7 +14,6 @@ type props = {
   pageProps: pageProps,
 }
 
-
 // We are not using `@react.component` since we will never
 // use <App/> within our ReScript code.
 // It's only used within `pages/_app.js`
@@ -25,10 +24,11 @@ let default = (props: props): React.element => {
 
   let content = React.createElement(component, pageProps)
 
-  switch router.route {
+  switch router.pathname {
   | "/examples" =>
     <MainLayout>
-      <h1 className="font-bold"> {React.string("Examples Section")} </h1> <div> content </div>
+      <h1 className="font-bold"> {React.string("Examples Section")} </h1>
+      <div> content </div>
     </MainLayout>
   | _ => <MainLayout> content </MainLayout>
   }
